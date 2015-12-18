@@ -3,14 +3,14 @@ import time
 
 from Ogame.py_bot import OgameBOT
 
-domain = 'tr.ogame.gameforge.com'
-server_url = 's135-tr.ogame.gameforge.com'
-username = 'AngelusMortis'
-password = '58525654afi'
+domain = ''
+server_url = ''
+username = ''
+password = ''
 session = requests.session()
-myMail = 'halacayberk@gmail.com'
-myMailPass = '58525654afi'
-toMail = 'ayberk35halac@gmail.com'
+myMail = ''
+myMailPass = ''
+toMail = ''
 bot = OgameBOT(session, domain, server_url, username, password, myMail, myMailPass, toMail)
 bot.start()
 while True:
