@@ -1,7 +1,5 @@
 import smtplib
-import time
 
-import requests
 from bs4 import BeautifulSoup
 
 
@@ -13,14 +11,22 @@ class OgameBOT:
         try:
             soup = BeautifulSoup(str(event))
             eventr = soup.findAll('figure')
+            check = True
             if len(eventr) != 0:
-                if eventr[0].parent.get_text() != None:
-                    return True
-                    print('true')
-                else:
-                    return False
+                for eventparser in eventr:
+                    if check:
+                        if eventparser.parent.get_text() != None:
+                            if 'Angelus' in eventparser.parent.get_text() or 'Daemon' in eventparser.parent.get_text() or 'Keşif' in eventparser.parent.get_text() or 'Nakliye' in eventparser.parent.get_text():
+                                check = False
+                                pass
+                            else:
+                                return True
+                        else:
+                            check = False
+                            continue
+            return False
         except:
-            start()
+            self.start()
             return False
 
     def get_url(self, page):
@@ -64,4 +70,3 @@ class OgameBOT:
         self.myMail = myMail
         self.toMail = toMail
         self.myMailPass = myMailPass
-
