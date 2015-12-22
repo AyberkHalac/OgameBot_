@@ -16,7 +16,7 @@ class OgameBOT:
                 for eventparser in eventr:
                     if check:
                         if eventparser.parent.get_text() != None:
-                            if 'Angelus' in eventparser.parent.get_text() or 'Daemon' in eventparser.parent.get_text() or 'Keşif' in eventparser.parent.get_text() or 'Nakliye' in eventparser.parent.get_text():
+                            if 'Angelus' in eventparser.parent.get_text() or 'Daemon' in eventparser.parent.get_text() or 'Caelum' in eventparser.parent.get_text() or 'Keşif' in eventparser.parent.get_text() or 'Nakliye' in eventparser.parent.get_text():
                                 check = False
                                 pass
                             else:
